@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luck Games</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/script/index.js" defer></script>
+    
+</head>
+<body>
+    <form class="modal fade" id="formAbrirCarrinho" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Pedido</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Área de mensagens de erro (pode ser usada para validações). -->
+                        <div id="msg" class="text-danger fw-bold mb-3"></div>
+
+                        <!-- Resumo dos itens do pedido (nome, quantidade e preço), preenchido por cart.js. -->
+                        <div id="itensCarrinho">
+
+                        </div>
+
+                        <label for="tipo-entrega">Tipo de entrega:</label>
+                        <br>
+                        <!-- [TAXA] Tipo de entrega: delivery, retirada ou consumo local.
+                            Ao escolher delivery em um pedido com marmita, a taxa de R$ 2,50 entra no total. -->
+                        <select name="" id="inEntregaPedido">
+                            <option value="">Selecione</option>
+                            <option value="delivery">Entrega Domiciliar</option>
+                            <option value="retirada">Retirada</option>
+                        </select>
+
+                        <br>
+
+                        <label for="nome-produto">Cliente: </label>
+                        <br>
+                        <!-- Nome do cliente, guardado no pedido. -->
+                        <input type="text" id="inClienteNome">
+
+                        <br>
+
+                        <label for="preco-produto">Total:</label>
+                        <br>
+                        <!-- Total do pedido (subtotal + taxa), atualizado por cart.js. -->
+                        <h1 id="totalPedido"></h1>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Botão que finaliza o pedido (dispara o submit tratado em cart.js). -->
+                        <input type="submit" class="btn btn-primary" value="Finalizar Pedido"></input>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    <header>
+        <nav>
+            <div class="nav-top">
+                <p></p>
+
+                <div>
+                    <ul>
+                        <li>
+                            <a href="">
+                                Acompanhar pedido
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                Ajuda
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="nav-bot">
+                <img src="" alt="">
+
+                <ul>
+                    <li>
+                        <a href="">
+                            Consoles
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            Acessórios
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            Computadores
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            Jogos
+                        </a>
+                    </li>
+                </ul>
+
+                <input type="text" id="search-bar" placeholder="Buscar produtos..">
+
+                <input type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formAbrirCarrinho"
+                value="Carrinho" id="abrir-carrinho">
+                </input>
+                <button id="theme-toggle">Modo Escuro</button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div id="grid">
+
+                <div>
+                    <h2></h2>
+                    <h1></h1>
+                    <p></p>
+                    <button></button>
+                </div>
+
+                <img src="" alt="">
+
+            </div>
+        </section>
+
+        <section id="produtosVitrine">
+            <header>
+                <!-- Botões de filtro. O data-id diz ao JS qual categoria mostrar -->
+                <div>
+                    <button class="btnProdutos" data-id="todas">Todas</button>
+                    <button class="btnProdutos" data-id="consoles">Consoles</button>
+                    <button class="btnProdutos" data-id="acessorios">Acessórios</button>
+                    <button class="btnProdutos" data-id="computadores">Computadores</button>
+                    <button class="btnProdutos" data-id="jogos">Jogos</button>
+                </div>
+
+                <div>
+                    <p>
+
+                    </p>
+
+                    <select name="" id="">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Aqui o JS insere os cards dos produtos -->
+            <div id="produtos">
+
+            </div>
+
+            <!--<button id="carregar-mais" data-id="carregar">
+                Carregar Mais
+            </button> -->
+            
+        </section>
+
+    </main>
+    <footer>
+        <div>
+            <h1>Ganhe 10% na primeira compra</h1>
+            <p>Assine a newsletter e receba o cupom de boas-vindas, além das ofertas da semana</p>
+
+            <div>
+                <input type="text" placeholder="seu@email.com">
+                <input type="submit" value="Quero o cupom">
+            </div>
+        </div>
+        
+        <hr>
+        <div>
+            <p>
+                © 2026 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+
+            <div>
+                <ul>
+                    <li>
+                        <a href="">
+                            Trocas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href=""> 
+                            Entrega
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            Privacidade
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>

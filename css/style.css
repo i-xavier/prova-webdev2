@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --paper: #ffffff;
+    /* fundo da página */
+    --ink: #181a2a;
+    /* cor principal do texto */
+    --slate: #6b7280;
+    /* texto secundário (cinza) */
+    --mist: #f3f4f6;
+    /* fundos suaves (botões, rodapé, inputs) */
+    --line: #e5e7eb;
+    /* linhas e bordas */
+    --accent: #6d28d9;
+    /* cor de destaque (vermelho) */
+    --price: #059669;
+    --star: #f59e0b;
+
+    /* uma cor para cada categoria de notícia */
+    --console: #6d28d9;
+    --acessorios: #0ea5e9;
+    --computadores: #059669;
+    --eletronicos: #db2777;
+
+    /* avisa o navegador que este é o tema claro
+       (ajusta scrollbars, campos de formulário, etc.) */
+    color-scheme: light;
+}
+
+/* modo escuro: só troca as cores que mudam */
+/* Explicação: quando o JS coloca data-theme="dark" no HTML, só as cores que mudam
+     são sobrescritas. As demais (signal, categorias) continuam iguais. */
+[data-theme="dark"] {
+    --paper: #121212;
+    --ink: #f4f4f5;
+    --slate: #a1a1aa;
+    --mist: #27272a;
+    --line: #3f3f46;
+
+    color-scheme: dark;
+}
+
+/* ===== Estilos base ===== */
+body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: Inter, sans-serif;
+    /* suaviza a troca entre tema claro e escuro */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* tira as bolinhas das listas */
+ul li {
+    list-style: none;
+    display: flex;
+}
+
+ul{
+    display: flex;
+    gap: 10px;
+}
+
+/* links sem sublinhado e com a mesma cor do texto ao redor */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* imagens nunca passam da largura do container */
+img {
+    max-width: 100%;
+}
+
+/* linha divisória fina (usada no cabeçalho) */
+hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 10px 0;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-top{
+    display: flex;
+}
+
+.div-bot{
+    display: flex;
+}
+
+#produtos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
